@@ -1,3 +1,8 @@
+/*
+ * Notepad 主程序
+ * wangding 408542507@qq.com 2018
+ */
+
 let np = {};                // Notepad 主程序对象
 
 np.config = {
@@ -12,6 +17,41 @@ np.fontSize       = localStorage.getItem('fontSize') || '16';          // 默认
 
 np.fileName       = '无标题';   // 默认文件名
 np.hasChanged     = false;      // 文档是否发生变化
+
+np.saveFile = () => {
+  const a = document.createElement('a'),
+        c = $editor.getContent(),
+        b = new Blob([c], { type: 'plain/text' });
+
+  a.href = URL.createObjectURL(b);
+  a.download = np.fileName + '.txt';
+  a.click();
+  URL.revokeObjectURL(a.href);
+};
+
+np.openFile = () => {
+  const dom = document.createElement('input');
+  dom.type = 'file';
+  dom.accept = '.txt';
+  dom.click();
+
+  dom.onchange = () => {
+    let reader = new FileReader();
+    reader.readAsText(dom.files[0]);
+
+    let fileName = dom.files[0].name.split('.')[0];
+    $('title').text(fileName + ' - 记事本');
+    np.fileName = fileName;
+
+    reader.onloadend = (e) => $editor.setContent(e.currentTarget.result);
+  };
+};
+
+np.newFile = () => {
+  $editor.newFile();
+  $('title').text('无标题 - 记事本');
+  np.hasChanged = false;
+};
 
 np.setFontStyle = (item, style) => {
   let conf = {
