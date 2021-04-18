@@ -106,6 +106,6 @@ let $dlgFont = new Dialog('font');
       dlg.destory();
     });
 
-    dlg.click((e) => e.stopPropagation());
+    $dlg.click((e) => e.stopPropagation());
   };
 })($dlgFont);
