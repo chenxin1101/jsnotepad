@@ -201,7 +201,7 @@ np.menuData = [
           localStorage.setItem('bShowStatusBar', np.bShowStatusBar);
           $statusBar.display(np.bShowStatusBar);
           $menubar.checked(3, 0, np.bShowStatusBar);
-          zeditor.resize(np.bShowStatusBar);
+          editor.resize(np.bShowStatusBar);
         } 
       }
     ],
