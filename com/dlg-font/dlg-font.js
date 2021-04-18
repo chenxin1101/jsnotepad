@@ -30,7 +30,7 @@ let $dlgFont = new Dialog('font');
       $btnCancel = $dlg.find('.btn-cancel'),
       $sample    = $dlg.find('.sample-txt');
 
-  let fonts = ['Agency FB', 'Algerian', 'Arial', 'Arial Rounded MT', 'Axure Handwriting', 'Bahnschrift', 'Baskerville Old Face', 'Bauhaus 93', 'Bell MT', 'Berlin Sans FB', 'Bernard MT', 'BlackAdder ITC'],
+  let fonts = ['仿宋','黑体','华文彩云','华文仿宋','华文行楷','华文琥珀','楷体','隶书','宋体','幼圆','Agency FB', 'Algerian', 'Arial', 'Arial Rounded MT', 'Axure Handwriting', 'Bahnschrift', 'Baskerville Old Face', 'Bauhaus 93', 'Bell MT', 'Berlin Sans FB', 'Bernard MT', 'BlackAdder ITC'],
       styles = ['常规', '斜体', '粗体', '粗斜体'],
       sizes = ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '26', '28', '36', '48', '72'];
 
